@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Mobile 3D Apps Lab 1 - 2023</title>
+  
+  <!-- Required meta tags -->  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/web3d.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/x3dom.css">
+
+
+
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-sm navbar_coca_cola">
+        <div class="container-fluid">
+          <!-- Brand -->
+            <div class="logo">
+                <a class="navbar-brand" href="index.html">
+                  <h1 class="letter">My</h1>
+                  <h1 class="letter">Coca</h1>
+                  <h1 class="letter">Cola</h1>
+                  <h1 class="letter">Brand</h1>
+                </a>
+            </div>
+  
+            <!-- Three bar icon that appears when page is shrunk, collapses the navigation links, not data target is the id selector #navbarSupportedContent -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Link Menu item button to the links class navbar-collapse id selector #navbarSupportedContent -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- The Links -->
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="model.html">Model</a>
+                  </li>
+                </ul>
+            </div> 
+        </div>
+      </nav>
+    <!-- This is the main contents of the page, it has a background image across 1 column, followed by three columns holding cards in a row for the 3 images and associated texts
+    -->
+    <div class="container-fluid main_contents">      
+        <div class="row">
+                <div class ="col-sm-10">
+                    <div id="card text-left">
+                        <div class="card-header">
+                            <ul class="nav nav-tabs card-header-tebs">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="coke_can.html">Coke Can</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="diet_coke.html">Diet Coke</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="sprite.html">Sprite Bottle</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="coke_glass.html">Coke Glass</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="3d_image">
+                          <x3d id="x3d_element">
+                            <scene>
+                              <Viewpoint id="viewpoint" position="0 0.05 0.3"></Viewpoint>
+                              <DirectionalLight direction="-1 0 -1"></DirectionalLight>
+                              <Transform rotation = "0 1 0 0">
+                                <Inline nameSpaceName="model" mapDEFToID="true" onclick="rotateObject();" url="https://users.sussex.ac.uk/~cw516/3dapp/assignment/resources/images/diet_coke_can.x3d"></Inline>
+                              </Transform>
+                            </scene>
+                          </x3d>
+                        </div><br>
+                        <div class="card-body"> 
+                            <h4 class="card-title">Coca Cola X3D Model</h4>
+                            <p class="card-text">This X3D model of the coke can has been creared in Maya, exported to FBX and converted, using the Blender transformat to X3D for display online.</p>
+                            <a href="#" class="btn btn-primary btn-responsive camera-font" onclick="switchView('front');">Front</a>
+                            <a href="#" class="btn btn-secondary btn-responsive camera-back" onclick="switchView('back');">Back</a>
+                            <a href="#" class="btn btn-success btn-responsive camera-left" onclick="switchView('left');">Left</a>
+                            <a href="#" class="btn btn-danger btn-responsive camera-right" onclick="switchView('right');">Right</a><br>
+                            <a href="#" class="btn btn-secondary btn-responsive" onclick="rotateObject();">Rotate</a>
+                            <a href="#" class="btn btn-success btn-responsive" onclick="stopRotation();">Stop</a>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-sm-2"> 
+                    <div class="card text-left">
+                      <div class="card-header">Image Gallery</div>
+                      <a href="coke_can.html">
+                          <img class="card-img-top img-fluid img-thumbnail" src="https://raw.githubusercontent.com/JimmyWang1234/3dapp/86cfde12899cb1d49f2fe828aeee8143ff351db5/resources/images/can_1.jpg" alt="Coca Cola">
+                      </a>
+                      <a href="diet_coke.html">
+                        <img class="card-img-top img-fluid img-thumbnail" src="https://raw.githubusercontent.com/JimmyWang1234/3dapp/6d6434b575692b287ba4ed35aad74d8d41850428/resources/images/diet_coke1.jpg" alt="Coca Cola">
+                      </a>
+                      <a href="sprite.html">
+                          <img class="card-img-top img-fluid img-thumbnail" src="https://raw.githubusercontent.com/JimmyWang1234/3dapp/5cf5506b3b8efbf4e528ae9039ee214a8af0fb20/resources/images/sprite1.jpg" alt="Sprite">
+                      </a>
+                      <a href="coke_glass.html">
+                          <img class="card-img-top img-fluid img-thumbnail" src="https://raw.githubusercontent.com/JimmyWang1234/3dapp/5cf5506b3b8efbf4e528ae9039ee214a8af0fb20/resources/images/glass1.jpg" alt="Coca Cola">
+                      </a>
+                    </div>
+                </div>
+
+            <div class="row">
+                <!-- Coca Cola column -->
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Coca Cola</h3>
+                            <p class="card-text">Atlanta Beginnings: It was 1886, and in New York Harbour, workers were constructing the Statue of Liberty. Eight hundred miles away, another great American symbol was about to be unveiled.
+                                Like many people who change history, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, he carried it a few doors down to Jacobs' Pharmacy. Here, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special. So Jacobs' Pharmacy put it on sale for five cents (about 3p) a glass.</p>    
+                            <a href="#" class="btn btn-primary">Find out more ...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm footer">
+      <div class="container-fluid">
+        <div class="copyright">
+          <p><span class="align-baseline">&copy Mobile Web 3D Applications </span></p>
+        </div>
+        <Div class="footerInfo">
+          <ul>
+            <li class="navbar-text">
+              <p>2022 Season</p>
+            </li>            
+            <li class="navbar-text">
+              <p> Professor Martin White- Convenor</p>
+            </li>
+            <li class="navbar-text">
+              <p><b>All tutorials are created using Bootstrap 4.6 </b></p>
+            </li>
+          </ul>
+        </Div>
+        
+        <div class="social">
+          <a href="#"><i class="fab fa-github-square fa-2x fa-pull-right"></i></a>
+          <a href="#"><i class="fab fa-google-plus-square fa-2x fa-pull-right"></i></a>
+          <a href="#"><i class="fab fa-twitter-square fa-2x fa-pull-right"></i></a>
+          <a href="#"><i class="fab fa-facebook-square fa-2x fa-pull-right"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/x3dom.js"></script>
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
